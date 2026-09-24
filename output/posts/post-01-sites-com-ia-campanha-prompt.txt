@@ -1,0 +1,41 @@
+Ferramenta: geração de imagens nativa (image_gen). Cena ilustrativa gerada, não fotografia documental da escola.
+
+Use case: ads-marketing.
+Design ONE outstanding finished Instagram promotional poster, portrait 4:5, in Brazilian Portuguese, for a free website-creation-with-AI short course at ETE Antônio Arruda de Farias. Aim for an attractive professional campaign that makes young adults stop scrolling and want to participate. The previous versions failed: one looked like generic AI-generated floating 3D clip art; another was a boring almost empty typography-only layout. This must be a confident, genuinely composed campaign with an engaging human visual, beautiful typography and a strong idea.
+
+CREATIVE CONCEPT: “SUA IDEIA PODE VIRAR UM SITE.”
+Visual identity: deep midnight navy #003366, warm yellow #f5cf48, off-white. Professional editorial photography treatment, contemporary Brazilian education campaign art direction. Carefully balanced, lively but not noisy. Crisp typographic hierarchy and generous text safety margins. No institution logo should be invented.
+
+HERO VISUAL:
+A convincing photographic-style candid scene in a modest contemporary computer lab: two Brazilian young adults, a woman and a man, about 20–25 years old, wearing understated casual everyday clothing, engaged in building a website together on an unbranded laptop. The young woman is the main person in focus, natural intrigued expression, looking toward the laptop, not staring or smiling at the camera. The other participant is softly out of focus behind her and looking at the same screen. Three-quarter side perspective so the laptop screen is partly visible with a plausible clean website layout, without tiny readable text. Natural skin texture, believable room light with warm highlights, authentic asymmetry and lived-in clothing. Cropping focuses on faces, posture and laptop. Keep hands mostly naturally hidden behind the screen, no staged pointing. No glowing futuristic UI, robots, AI brain imagery, hovering objects or fantasy technology. This is an illustrative photographic scene, not a claim to document a real school event.
+
+COMPOSITION:
+A cohesive art-directed poster, not a webpage, not four rectangular dashboard cards.
+Top slim navy masthead with small off-white school name and restrained yellow rule.
+Upper-left headline occupying about the top third, on a deep navy field. Oversized but carefully proportioned condensed modern sans-serif, intentional line breaks, with just the word 'SITE.' in warm yellow. Main exact headline:
+'SUA IDEIA'
+'PODE VIRAR'
+'UM SITE.'
+Hero photographic scene occupies the middle and right portion, roughly 45–50% of the overall poster. Integrate it into the design through one clean angular editorial crop and rich navy areas, not random floating cutouts or torn paper. Avoid laying text across faces. The photo should give the design personality and real-life relevance.
+Place a short course-identification line in a clear, well-spaced smaller type block adjoining the hero photo:
+'Desenvolvimento de sites com IA'
+Supporting line below in regular weight:
+'Aprenda a criar com inteligência artificial.'
+Bottom quarter is a confident warm-yellow information band with navy type: date is prominent, '29 SET' in bold typographic treatment; nearby 'GRATUITO' and '25 VAGAS' in smaller strong lettering, separated cleanly by thin rules or whitespace rather than a collection of badges. Clear footer CTA 'INSCREVA-SE PELO SITE'. Final small location label 'Surubim • Pernambuco'. Everything must be easy to read at mobile size.
+Use a small number of thoughtfully placed geometric graphic accents, never busy decoration. Photo, title, date and call to action should feel professionally composed in one layout.
+
+ALL REQUIRED TEXT EXACTLY:
+'ETE Antônio Arruda de Farias'
+'SUA IDEIA'
+'PODE VIRAR'
+'UM SITE.'
+'Desenvolvimento de sites com IA'
+'Aprenda a criar com inteligência artificial.'
+'29 SET'
+'GRATUITO'
+'25 VAGAS'
+'INSCREVA-SE PELO SITE'
+'Surubim • Pernambuco'
+
+Constraints:
+All words must be spelled accurately in Brazilian Portuguese with correct accents. No cropped text. No fake logos, QR codes, URLs, telephone numbers, hours, certificates, employment or money promises. No selection/assessment statements or guaranteed admission. No glossy 3D, plastic people, CGI aesthetic, oversmoothed skin, star/spark decorations, circuit backgrounds, excessive glowing gradients, stock-photo handshakes, emojis or cartoon laptops. No mockup of a poster on a wall. Deliver the actual complete rectangular artwork. Striking and approachable, not luxury aloofness or a sterile corporate slide.

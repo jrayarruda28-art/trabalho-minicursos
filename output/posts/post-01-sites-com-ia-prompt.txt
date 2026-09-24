@@ -1,0 +1,19 @@
+Ferramenta: geração de imagens nativa (image_gen).
+
+Use case: ads-marketing.
+Crie UMA arte final de divulgação em português brasileiro para Instagram, formato vertical 4:5, alta resolução, primeiro post de uma série de quatro minicursos da ETE Antônio Arruda de Farias. A imagem deve ser o próprio post, sem mockup, moldura de celular ou cenário externo.
+Tema: minicurso Desenvolvimento de sites com IA.
+Direção visual: design editorial contemporâneo, legível, elegante e tecnológico, inspirado na identidade do site da escola: azul-marinho #003366, amarelo #f5cf48, fundo branco-gelo #f5f7fb e pequenos detalhes azul-claro #a9d9ed. Tipografia sans-serif forte e grande, hierarquia muito clara, bastante respiro, grade gráfica sutil. Formas retangulares e linhas técnicas precisas, composição profissional com contraste. Evitar aparência genérica de panfleto, excesso de efeitos ou gradientes neon.
+Composição: cabeçalho discreto com identificação da escola; título grande na parte superior, destacar “SITES COM IA” com amarelo. Ilustração central autoral de um notebook em perspectiva com uma página web sendo construída, cartões de interface saindo da tela e um cursor, pequenos brilhos indicando inteligência artificial. Ilustração sofisticada azul e amarelo, contornos limpos, volume discreto e sombras suaves, integrada à grade do cartaz. Parte inferior com data muito visível, etiquetas de gratuidade e vagas e uma chamada para inscrição. Respeitar margens generosas; nenhum texto cortado.
+Todo o texto do post, escrever exatamente, com acentuação perfeita:
+“ETE Antônio Arruda de Farias”
+“MINICURSO 01”
+“DESENVOLVIMENTO”
+“DE SITES COM IA”
+“Transforme suas ideias em páginas para a web.”
+“29 DE SETEMBRO”
+“GRATUITO”
+“25 VAGAS”
+“INSCREVA-SE PELO SITE”
+“Surubim • Pernambuco”
+Restrições: não inventar logotipo, brasão, URL, QR code, telefone, horário, certificação ou pré-requisitos. A marca é somente o nome da escola em texto. Não mencionar seleção, avaliação, ordem de chegada ou garantia de vaga. Gerar apenas esta primeira arte, não um mosaico de quatro posts. Todos os textos devem ser grandes o suficiente para leitura no celular.

@@ -1,0 +1,37 @@
+Ferramenta: geração de imagens nativa (image_gen).
+
+Use case: ads-marketing.
+Create ONE finished Portuguese-language poster for a Brazilian technical school's free short course. Portrait Instagram format 4:5. This is a complete professional redesign with an exceptionally restrained editorial graphic-design aesthetic. The client specifically dislikes the generic AI-generated look. Achieve this through rigorous typography, an intentional asymmetric Swiss editorial grid, generous negative space and flat print-like design. No photography is needed and no synthetic photo should be invented.
+
+Art direction: a polished cultural-institution / architecture-school programme poster designed by an experienced human graphic designer. Two solid ink colors only: very deep navy #003366 and warm golden yellow #f5cf48 on clean warm off-white #f5f7fb. Absolutely flat solid colors. NO gradients, glow, 3D, mockup, laptop, robot, chip, floating UI cards, sparks, stars, circuits, clip art, fake paper grain, shadows, emojis, pills, rounded containers, website-button CTA, icons, arrows or glossy decoration.
+
+Layout:
+- Generous outer margins of roughly 7%. Strict aligned columns, restrained thin horizontal rules, careful baseline alignment.
+- Small two-line school identification at the top left, a compact '01' at the top right, with a thin rule beneath.
+- Small uppercase editorial kicker 'MINICURSO GRATUITO', with ample space separating it from the main headline.
+- Main typographic composition occupies the upper-middle portion. Extremely confident oversized grotesk sans-serif, bold but sophisticated, left aligned, deliberate line breaks:
+'Desenvolvimento'
+'de sites'
+'com IA.'
+'Desenvolvimento' must fit comfortably on one line without clipping; size it smaller than the two subsequent lines if needed. Beautiful letter spacing and balanced line spacing. The words 'de sites' should be the dominant typographic anchor.
+- A single flat yellow vertical rectangle or slim yellow bar may mark one edge of the composition, functioning as a quiet graphic accent. No yellow highlight pill behind the title. The main illustration IS the typography: keep the page largely free of imagery.
+- Below the title, a short, quiet supporting sentence in regular sans-serif, narrow enough to be readable, with plenty of breathing room.
+- Bottom information zone separated by a thin navy rule. Clear two-column arrangement: large '29.09' and smaller 'SETEMBRO' on the left; '25 vagas' and 'Inscrições pelo site' on the right. This must look like a carefully typeset event programme, not a dashboard or marketing landing page.
+- Small footer 'Surubim, Pernambuco'.
+
+Render only these exact Portuguese texts, with correct accents and no invented information:
+'ETE Antônio Arruda de Farias'
+'Escola Técnica Estadual'
+'01'
+'MINICURSO GRATUITO'
+'Desenvolvimento'
+'de sites'
+'com IA.'
+'Transforme suas ideias em páginas para a web.'
+'29.09'
+'SETEMBRO'
+'25 vagas'
+'Inscrições pelo site'
+'Surubim, Pernambuco'
+
+Technical and content constraints: all text fully inside safe margins, very sharp, perfectly readable on mobile. No cropped lettering, no watermark, no logo or invented school crest, no URL, QR code, year, hours, certificate promises or contact details. Do not mention selection, assessment or guaranteed admission. This is one finished flat poster filling the entire image, not a poster photographed on a wall. The result should feel credible, calm, intentionally designed and professionally typeset.

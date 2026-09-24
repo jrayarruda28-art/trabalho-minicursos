@@ -1,0 +1,25 @@
+{
+  "name": "minicursos-ete",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "dev": "node --env-file-if-exists=.env --watch server.js",
+    "db:migrate": "node --env-file-if-exists=.env scripts/migrate.js",
+    "admin:configure": "node --env-file-if-exists=.env scripts/configure-admin.js",
+    "setup": "npm run db:migrate && npm run admin:configure",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "pg": "^8.23.0"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0"
+  }
+}

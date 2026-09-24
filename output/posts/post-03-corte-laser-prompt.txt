@@ -1,0 +1,20 @@
+Ferramenta: geração de imagens nativa (image_gen).
+
+Use case: ads-marketing.
+Crie UMA arte final de divulgação em português brasileiro para Instagram, vertical 4:5, alta resolução. É o POST 3 de uma série de quatro minicursos da ETE Antônio Arruda de Farias. A imagem deve ser o próprio post, sem mockup externo ou moldura de celular.
+Tema: CORTE A LASER.
+Identidade da série: fundo branco-gelo #f5f7fb, azul-marinho profundo #003366, amarelo #f5cf48 e pequenos detalhes azul-claro #a9d9ed. Design editorial tecnológico limpo e profissional, tipografia sans-serif muito forte, título grande, contraste excelente e margens generosas. Linhas técnicas discretas nos cantos, pequenos detalhes geométricos, volume suave na ilustração. Legível no celular. O nome da escola deve ficar completo e sem cortes.
+Hierarquia: nome da escola centralizado no topo entre duas linhas finas azul-claro; selo “MINICURSO 03”; título enorme “CORTE A LASER”, equilibrado em duas linhas, destacando “A LASER” em uma faixa amarela; frase breve abaixo; grande ilustração temática central; faixa azul-marinho com ícone simples de calendário e data branca grande; dois selos lado a lado com “GRATUITO” sobre amarelo e “25 VAGAS” sobre azul-claro; chamada em botão gráfico azul-marinho; cidade no rodapé.
+Ilustração central: máquina de corte a laser de mesa fechada, em perspectiva de três quartos, gabinete sofisticado azul-marinho e cinza com detalhes amarelos e janela protetora transparente levemente âmbar, mostrando o cabeçote trabalhando sobre uma chapa de madeira clara com recortes geométricos precisos. Luz de trabalho pequena e localizada, sem raio de laser exposto nem espetáculo de faíscas. Em primeiro plano, poucas peças bem acabadas de madeira cortada a laser: uma pequena caixa de encaixes e formas geométricas planas. Um painel discreto azul-claro com desenho vetorial de corte reforça a passagem do desenho para a peça. Acabamento 3D editorial polido, sombras suaves, objeto destacado contra fundo claro. Não incluir impressora 3D ou notebook como objeto principal.
+Texto obrigatório, exatamente com estes acentos:
+“ETE Antônio Arruda de Farias”
+“MINICURSO 03”
+“CORTE”
+“A LASER”
+“Transforme desenhos em peças únicas.”
+“24 DE NOVEMBRO”
+“GRATUITO”
+“25 VAGAS”
+“INSCREVA-SE PELO SITE”
+“Surubim • Pernambuco”
+Restrições: não adicionar outros textos, logotipo inventado, brasão, URL, QR code, telefone, horário, pré-requisitos ou certificado. Não mencionar seleção, avaliação, ordem de chegada ou garantia de vaga. Não usar datas de setembro/outubro, título de IA, impressão 3D ou e-commerce. Não gerar mosaico. Somente este terceiro post.

@@ -1,0 +1,20 @@
+Ferramenta: geração de imagens nativa (image_gen).
+
+Use case: ads-marketing.
+Crie UMA nova arte final para Instagram em português brasileiro, vertical 4:5, alta resolução. É o POST 2 de uma série de quatro minicursos da ETE Antônio Arruda de Farias.
+Este novo post é sobre MODELAGEM E IMPRESSÃO 3D. Mantenha uma identidade editorial tecnológica, limpa e profissional, com a grade e a hierarquia descritas abaixo.
+Identidade: fundo branco-gelo #f5f7fb, azul-marinho #003366, amarelo #f5cf48, detalhes azul-claro #a9d9ed. Cabeçalho com nome da escola, selo “MINICURSO 02”, título sans-serif pesado grande com destaque amarelo, ilustração central sofisticada, data grande, etiquetas de gratuidade e vagas, chamada azul-marinho na parte inferior e cidade no rodapé. Muito legível no celular, margens generosas, nenhuma palavra cortada. Sem mockup externo: a imagem é o post.
+Ilustração central: impressora 3D de mesa FDM em perspectiva de três quartos, elegante, azul-marinho e cinza-claro com detalhes amarelos, carretel de filamento visível; cabeçote imprimindo um pequeno objeto geométrico amarelo com camadas visíveis sobre a mesa de impressão. Ao lado, uma pequena representação de modelo digital 3D em wireframe dentro de um painel flutuante, comunicando a transformação do modelo digital em objeto físico. Materiais e volumes suaves e acabamento 3D polido, linhas técnicas sutis ao fundo. Evite texto adicional na ilustração.
+Texto obrigatório, exatamente com estes acentos:
+“ETE Antônio Arruda de Farias”
+“MINICURSO 02”
+“MODELAGEM E”
+“IMPRESSÃO 3D”
+“Dê forma às suas ideias.”
+“29 DE OUTUBRO”
+“GRATUITO”
+“25 VAGAS”
+“INSCREVA-SE PELO SITE”
+“Surubim • Pernambuco”
+O título principal deve ser “MODELAGEM E IMPRESSÃO 3D” em duas linhas equilibradas, grande e com destaque amarelo em “IMPRESSÃO 3D”.
+Não incluir data de setembro, IA, código de programação, computador como objeto principal, corte a laser, seleção, avaliação, ordem de chegada ou garantia de vaga. Não inventar logotipo, brasão, QR code, URL, telefone, horário, pré-requisitos ou certificado. Não gerar mosaico. Gere somente este segundo post.

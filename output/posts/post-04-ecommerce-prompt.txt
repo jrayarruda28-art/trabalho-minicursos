@@ -1,0 +1,19 @@
+Ferramenta: geração de imagens nativa (image_gen).
+
+Use case: ads-marketing.
+Crie UMA arte final de divulgação em português brasileiro para Instagram, vertical 4:5, alta resolução. É o POST 4 e último de uma série de quatro minicursos da ETE Antônio Arruda de Farias. A imagem deve ser o próprio post, sem mockup externo ou moldura de celular.
+Tema: E-COMMERCE.
+Identidade da série: fundo branco-gelo #f5f7fb, azul-marinho profundo #003366, amarelo #f5cf48 e pequenos detalhes azul-claro #a9d9ed. Design editorial tecnológico limpo e profissional, tipografia sans-serif muito forte, título grande, contraste excelente e margens generosas. Linhas técnicas discretas nos cantos, pequenos detalhes geométricos, volume suave na ilustração. Legível no celular. O nome da escola deve ficar completo e sem cortes.
+Hierarquia: nome da escola centralizado no topo entre duas linhas finas azul-claro; selo “MINICURSO 04”; título enorme “E-COMMERCE”, completo, perfeitamente legível, sobre uma faixa amarela; frase breve abaixo; grande ilustração temática central; faixa azul-marinho com ícone simples de calendário e data branca grande em uma ou duas linhas equilibradas; dois selos lado a lado com “GRATUITO” sobre amarelo e “25 VAGAS” sobre azul-claro; chamada em botão gráfico azul-marinho; cidade no rodapé.
+Ilustração central: composição autoral sofisticada de uma loja virtual, com notebook em perspectiva exibindo uma vitrine digital limpa com cartões de produtos genéricos sem marcas e botão de compra representado por ícone; sacola de compras azul-marinho com alças amarelas, duas pequenas caixas de entrega em papel kraft, um carrinho de compras estilizado e um pequeno ícone de confirmação de pedido. Elementos bem organizados em uma cena coesa, transmitindo comércio digital e gestão de uma loja online. Volumes 3D polidos, sombras suaves, detalhes amarelos e azul-claro, fundo claro com grade discreta. Nenhuma marca de marketplace, nenhum preço, nenhum número de cartão, nenhum texto minúsculo ou slogan extra nas telas. Não incluir impressora 3D, máquina a laser ou símbolos de inteligência artificial.
+Texto obrigatório, exatamente com estes acentos:
+“ETE Antônio Arruda de Farias”
+“MINICURSO 04”
+“E-COMMERCE”
+“Leve suas ideias para o comércio digital.”
+“10 A 13 DE DEZEMBRO”
+“GRATUITO”
+“25 VAGAS”
+“INSCREVA-SE PELO SITE”
+“Surubim • Pernambuco”
+Restrições: não adicionar outros textos, logotipo inventado, brasão, URL, QR code, telefone, horário, pré-requisitos ou certificado. Não mencionar seleção, avaliação, ordem de chegada ou garantia de vaga. Não prometer renda, lucro ou resultados financeiros. Não usar datas dos outros cursos. Não gerar mosaico. Somente este quarto post.
