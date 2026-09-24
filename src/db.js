@@ -2,18 +2,43 @@ import { readFileSync } from 'node:fs';
 import { rootCertificates } from 'node:tls';
 import pg from 'pg';
 
-export function createPool(connectionString = process.env.DATABASE_URL) {
-  if (!connectionString) {
+export function parseDatabaseUrl(value) {
+  let connectionString = value ?? '';
+  if (typeof connectionString === 'string') {
+    connectionString = connectionString.trim();
+    // Aceitar uma linha do .env colada no campo de valor da hospedagem.
+    if (connectionString.startsWith('DATABASE_URL=')) connectionString = connectionString.slice('DATABASE_URL='.length).trim();
+    const quote = connectionString[0];
+    if (connectionString.length >= 2 && (quote === '"' || quote === "'") && connectionString.endsWith(quote)) {
+      connectionString = connectionString.slice(1, -1).trim();
+    }
+  }
+  if (connectionString === '') {
     const error = new Error('Configure DATABASE_URL nas variáveis de ambiente do servidor.');
     error.code = 'DATABASE_URL_MISSING';
     throw error;
   }
-  const url = new URL(connectionString);
+  try {
+    if (typeof connectionString !== 'string' || /[\u0000-\u001f\u007f]/.test(connectionString)) throw new Error();
+    const url = new URL(connectionString);
+    if (!['postgres:', 'postgresql:'].includes(url.protocol) || !url.hostname || url.hash) throw new Error();
+    return url;
+  } catch {
+    // O erro nativo de URL contém o valor recebido, incluindo a senha.
+    const error = new Error('DATABASE_URL inválida. Use a URL de conexão PostgreSQL no formato postgresql://usuario:senha@host:porta/banco.');
+    error.code = 'DATABASE_URL_INVALID';
+    throw error;
+  }
+}
+
+export function createPool(connectionString = process.env.DATABASE_URL) {
+  const url = parseDatabaseUrl(connectionString);
   // TLS é configurado aqui para que parâmetros da URL não desativem a verificação.
-  for (const key of ['sslmode', 'sslcert', 'sslkey', 'sslrootcert', 'pgbouncer']) url.searchParams.delete(key);
-  const local = ['localhost', '127.0.0.1', '[::1]'].includes(url.hostname);
+  for (const key of ['ssl', 'sslmode', 'sslcert', 'sslkey', 'sslrootcert', 'pgbouncer']) url.searchParams.delete(key);
+  const hostname = (url.searchParams.getAll('host').at(-1) || url.hostname).toLowerCase();
+  const local = ['localhost', '127.0.0.1', '[::1]', '::1'].includes(hostname);
   const ca = [...rootCertificates];
-  if (url.hostname.endsWith('.supabase.com')) {
+  if (hostname.endsWith('.supabase.com')) {
     ca.push(readFileSync(new URL('../certs/supabase-ca.crt', import.meta.url), 'utf8'));
   }
   const pool = new pg.Pool({

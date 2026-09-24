@@ -40,6 +40,14 @@ Na Vercel, o proxy HTTPS e os cookies seguros são reconhecidos automaticamente 
 
 Se aparecer `FUNCTION_INVOCATION_FAILED`, abra os **Runtime Logs** da publicação para consultar a causa. A ausência de `DATABASE_URL` agora mantém as páginas disponíveis e resulta em erro controlado nas operações do banco, com o código `DATABASE_URL_MISSING` nos logs do servidor. A inscrição só é confirmada após a gravação.
 
+Se o login retornar `503` com `ERR_INVALID_URL` nos logs, confira as variáveis em **Settings → Environment Variables**:
+
+- Sem `APP_ORIGIN` configurada, esse erro indica que `DATABASE_URL` não foi reconhecida como URL. Copie somente o valor de `DATABASE_URL` do `.env` local para o campo **Value** da Vercel. Ele deve começar com `postgresql://` ou `postgres://`; o endereço HTTPS do painel/API do Supabase não é uma conexão PostgreSQL.
+- Se tiver cadastrado `APP_ORIGIN`, use `https://trabalho-minicursos.vercel.app` para esse domínio de produção ou remova a variável para usar a detecção automática. Um domínio sem `https://` não é uma origem válida.
+- Salve a variável para **Production** e faça **Redeploy**: a alteração não se aplica a uma publicação que já está rodando.
+
+O parser de banco aceita espaços externos, um prefixo `DATABASE_URL=` e um par de aspas externas, cobrindo erros comuns ao copiar uma linha do `.env`. Ele preserva a senha e sua codificação; caracteres especiais devem estar codificados na URL de conexão. Configurações ainda inválidas geram `DATABASE_URL_INVALID` nos logs, sem registrar o valor nem a senha. As páginas continuam disponíveis, e operações que precisam do banco retornam `503` sem confirmar gravações. O `401` de `/api/admin/session` antes do login é esperado; respostas `304` dos arquivos estáticos e `404` de `/favicon.ico` não são a causa da falha no login.
+
 Referências: [Node.js Functions](https://vercel.com/docs/functions/runtimes/node-js), [arquivos nas funções](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions), [variáveis de ambiente](https://vercel.com/docs/environment-variables).
 
 ### Servidor Node.js tradicional

@@ -6,7 +6,7 @@ import { createLazyPool } from '../src/db.js';
 
 const exec = promisify(execFile);
 
-test('todos os pontos de entrada exportam a mesma aplicação válida para a Vercel', async () => {
+test('entradas da Vercel mantêm as páginas disponíveis com DATABASE_URL ausente ou inválida', async () => {
   const env = { ...process.env, VERCEL: '1', NODE_ENV: 'production' };
   for (const key of ['DATABASE_URL', 'APP_ORIGIN', 'TRUST_PROXY', 'NODE_OPTIONS']) delete env[key];
   const code = `
@@ -40,6 +40,11 @@ test('todos os pontos de entrada exportam a mesma aplicação válida para a Ver
       const unavailable = await fetch(base + '/api/inscricoes', options);
       assert.equal(unavailable.status, 503, 'banco ausente gera erro controlado, não erro de origem');
       assert.equal((await unavailable.json()).sucesso, false);
+      const login = await fetch(base + '/api/admin/login', { ...options,
+        body: JSON.stringify({ usuario: 'admin', senha: 'senha-de-teste' }) });
+      assert.equal(login.status, 503);
+      assert.deepEqual(await login.json(), { sucesso: false,
+        mensagem: 'O serviço está temporariamente indisponível. Tente novamente em instantes.' });
       assert.equal((await fetch(base + '/api/inscricoes', { ...options,
         headers: { ...options.headers, Origin: 'https://outro-site.example' } })).status, 403);
       assert.equal((await fetch(base + '/')).status, 200, 'erro de banco não derruba as páginas');
@@ -49,9 +54,16 @@ test('todos os pontos de entrada exportam a mesma aplicação válida para a Ver
       await new Promise(resolve => server.close(resolve));
     }
   `;
-  const { stdout, stderr } = await exec(process.execPath, ['--input-type=module', '-e', code], { env, timeout: 15000 });
-  assert.match(stdout, /handler-ok/);
-  assert.match(stderr, /DATABASE_URL_MISSING/);
+  for (const [databaseUrl, expectedCode] of [
+    [undefined, 'DATABASE_URL_MISSING'],
+    ['postgresql://usuario:segredo-nao-publicavel@[host-invalido/postgres', 'DATABASE_URL_INVALID'],
+  ]) {
+    const testEnv = { ...env, ...(databaseUrl && { DATABASE_URL: databaseUrl }) };
+    const { stdout, stderr } = await exec(process.execPath, ['--input-type=module', '-e', code], { env: testEnv, timeout: 15000 });
+    assert.match(stdout, /handler-ok/);
+    assert.ok(stderr.includes(expectedCode));
+    assert.doesNotMatch(stdout + stderr, /segredo-nao-publicavel|host-invalido|ERR_INVALID_URL/);
+  }
 });
 
 test('pool sob demanda reutiliza a conexão e permite recuperação após configuração ausente', async () => {
