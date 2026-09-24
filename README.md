@@ -27,9 +27,26 @@ Tabelas: `minicursos`, `inscricoes`, `administradores` e `sessoes_admin`. Cada c
 
 ## Publicação
 
-Este projeto precisa de hospedagem que execute Node.js e consiga acessar o PostgreSQL. Publicar apenas `index.html` em uma hospedagem estática não executa a API. Use `npm ci` na instalação e `npm start` para iniciar; configure `DATABASE_URL`, `NODE_ENV=production` e `APP_ORIGIN` com a origem HTTPS pública (por exemplo, `https://minicursos.exemplo.com`). A porta é lida de `PORT`, com padrão 3000. Execute a migração antes da primeira inicialização em um banco novo.
+### Vercel
 
-Se houver um proxy reverso confiável, configure `TRUST_PROXY` com a quantidade correta de saltos (por exemplo, `1` para um único proxy). O proxy deve encaminhar o protocolo e o IP reais e impedir acesso direto ao servidor; isso é necessário para a verificação de origem e os limites por IP. O proxy deve terminar HTTPS. Cookies são `Secure` em produção, `HttpOnly`, `SameSite=Strict` e expiram após oito horas.
+Os três pontos de entrada (`src/app.js`, `server.js` e `api/index.js`) exportam a mesma aplicação pronta, evitando o erro `Invalid export found in module /var/task/src/app.js`. O projeto inclui `api/index.js` e `vercel.json`: a Vercel importa a aplicação Express sem abrir uma porta nem conectar ao banco durante a importação. As rotas, páginas, arquivos de `public` e o certificado TLS estão incluídos na função. O `.env` e os posts de divulgação não são enviados na publicação.
+
+1. Envie o projeto completo atualizado e selecione a raiz que contém `package.json` e `vercel.json`. O preset é **Other**, conforme `framework: null` no arquivo. Não configure `npm start` como Build Command; a configuração já desativa essa etapa.
+2. Em **Settings → Environment Variables**, cadastre `DATABASE_URL` com o mesmo valor do `.env` local, sem incluir `DATABASE_URL=` nem aspas externas. Marque **Production** e **Preview** se usar ambos. O `.env` local não configura automaticamente as variáveis da Vercel.
+3. Faça um novo deploy com esses arquivos. Se alterar uma variável depois da publicação, faça **Redeploy** para aplicá-la.
+4. Abra `/` e `/admin`. O administrador já cadastrado permanece no banco; não é necessário executar `npm run setup` nem cadastrar `ADMIN_PASSWORD` na hospedagem.
+
+Na Vercel, o proxy HTTPS e os cookies seguros são reconhecidos automaticamente por `VERCEL=1`. `APP_ORIGIN` é opcional: sem ela, o servidor aceita a origem correspondente ao domínio da própria requisição, permitindo também os endereços de Preview. Se definir uma origem fixa, use o domínio correto em cada ambiente. Não copie um `APP_ORIGIN=http://localhost:3000` para produção.
+
+Se aparecer `FUNCTION_INVOCATION_FAILED`, abra os **Runtime Logs** da publicação para consultar a causa. A ausência de `DATABASE_URL` agora mantém as páginas disponíveis e resulta em erro controlado nas operações do banco, com o código `DATABASE_URL_MISSING` nos logs do servidor. A inscrição só é confirmada após a gravação.
+
+Referências: [Node.js Functions](https://vercel.com/docs/functions/runtimes/node-js), [arquivos nas funções](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions), [variáveis de ambiente](https://vercel.com/docs/environment-variables).
+
+### Servidor Node.js tradicional
+
+Use `npm ci` na instalação e `npm start` para iniciar; configure `DATABASE_URL`, `NODE_ENV=production` e `APP_ORIGIN` com a origem HTTPS pública. A porta é lida de `PORT`, com padrão 3000. Execute a migração antes da primeira inicialização em um banco novo. Publicar apenas o HTML em hospedagem estática não executa a API.
+
+Se houver um proxy reverso confiável fora da Vercel, configure `TRUST_PROXY` com a quantidade correta de saltos (por exemplo, `1` para um único proxy). O proxy deve encaminhar o protocolo e o IP reais, terminar HTTPS e impedir acesso direto ao servidor. Cookies são `Secure` em produção, `HttpOnly`, `SameSite=Strict` e expiram após oito horas.
 
 As tabelas têm RLS habilitada e acesso negado aos papéis públicos do Supabase. A URL fornecida usa um papel de servidor autorizado; nunca coloque essa credencial no navegador. Os arquivos servidos são a página inicial e os arquivos de `public`, sem expor `.env`, código de servidor ou migrações.
 

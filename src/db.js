@@ -3,7 +3,11 @@ import { rootCertificates } from 'node:tls';
 import pg from 'pg';
 
 export function createPool(connectionString = process.env.DATABASE_URL) {
-  if (!connectionString) throw new Error('Configure DATABASE_URL no arquivo .env.');
+  if (!connectionString) {
+    const error = new Error('Configure DATABASE_URL nas variáveis de ambiente do servidor.');
+    error.code = 'DATABASE_URL_MISSING';
+    throw error;
+  }
   const url = new URL(connectionString);
   // TLS é configurado aqui para que parâmetros da URL não desativem a verificação.
   for (const key of ['sslmode', 'sslcert', 'sslkey', 'sslrootcert', 'pgbouncer']) url.searchParams.delete(key);
@@ -24,4 +28,21 @@ export function createPool(connectionString = process.env.DATABASE_URL) {
   // Não registrar URLs, credenciais nem informações pessoais em erros.
   pool.on('error', () => console.error('Uma conexão inativa com o banco foi encerrada.'));
   return pool;
+}
+
+// Uma instância por processo, criada somente quando uma rota precisa do banco.
+// Assim, importar a função na Vercel não depende de conexão ou do arquivo .env.
+export function createLazyPool(factory = createPool) {
+  let pool;
+  const getPool = () => pool ||= factory();
+  return {
+    query: async (...args) => getPool().query(...args),
+    connect: async () => getPool().connect(),
+    end: async () => {
+      if (pool) {
+        await pool.end();
+        pool = undefined;
+      }
+    },
+  };
 }

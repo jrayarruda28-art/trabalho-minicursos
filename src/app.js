@@ -1,4 +1,5 @@
 import express from 'express';
+import { createLazyPool } from './db.js';
 import { rateLimit } from 'express-rate-limit';
 import { fileURLToPath } from 'node:url';
 import { hashPassword, verifyPassword, hashToken, newToken, sessionToken } from './security.js';
@@ -10,8 +11,8 @@ const dummyHash = hashPassword(newToken());
 const sessionDuration = 8 * 60 * 60 * 1000;
 
 export function createApp({ pool, registrationLimit = 60, loginLimit = 10, appOrigin = process.env.APP_ORIGIN,
-  trustProxy = process.env.TRUST_PROXY ? Number(process.env.TRUST_PROXY) : false,
-  secureCookies = process.env.NODE_ENV === 'production' || appOrigin?.startsWith('https://') } = {}) {
+  trustProxy = process.env.TRUST_PROXY ? Number(process.env.TRUST_PROXY) : process.env.VERCEL === '1' ? 1 : false,
+  secureCookies = process.env.VERCEL === '1' || process.env.NODE_ENV === 'production' || appOrigin?.startsWith('https://') } = {}) {
   if (!pool) throw new Error('A conexão com o banco é obrigatória.');
   const app = express();
   app.disable('x-powered-by');
@@ -130,3 +131,9 @@ export function createApp({ pool, registrationLimit = 60, loginLimit = 10, appOr
   });
   return app;
 }
+
+// A detecção automática da Vercel também pode escolher src/app.js como entrada.
+// Sempre exportar a aplicação pronta, não apenas a função que a constrói.
+export const applicationPool = createLazyPool();
+const application = createApp({ pool: applicationPool });
+export default application;
